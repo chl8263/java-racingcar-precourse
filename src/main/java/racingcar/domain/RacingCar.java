@@ -3,7 +3,6 @@ package racingcar.domain;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class RacingCar {
-
     public static final int GO_AHEAD_NUMBER = 4;
 
     private final CarName name;

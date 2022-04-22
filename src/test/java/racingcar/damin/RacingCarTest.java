@@ -10,6 +10,14 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class RacingCarTest {
 
     @Test
+    void RacingCar_NameIsEmpty_ExceptionThrown() {
+        String name = "";
+
+        assertThatThrownBy(() -> new RacingCar(CarName.of(name)))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
     void RacingCar_NameLengthIsMoreThan5_ExceptionThrown() {
         String name = "Jeremy";
 
