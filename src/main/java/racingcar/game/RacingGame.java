@@ -3,6 +3,7 @@ package racingcar.game;
 import camp.nextstep.edu.missionutils.Console;
 import org.assertj.core.util.Lists;
 import racingcar.domain.CarName;
+import racingcar.domain.Racing;
 import racingcar.domain.RacingCar;
 import racingcar.exception.EmptyStringArgumentException;
 import racingcar.exception.InputNotIntegerArgumentException;
@@ -23,6 +24,9 @@ public class RacingGame extends Game {
     public void play() {
         List<RacingCar> racingCarList = getRacingCars();
         int racingCount = getRacingCount();
+        Racing racing = new Racing(racingCount, racingCarList);
+        racing.race();
+        if (racing.isEnd()) racing.showRacingResult();
     }
 
     private List<RacingCar> getRacingCars() {
@@ -68,7 +72,6 @@ public class RacingGame extends Game {
 
     private static int convertStringToInteger(String value) {
         if (!value.chars().allMatch(Character::isDigit)) throw new InputNotIntegerArgumentException(ERROR_ONLY_ABLE_TO_INPUT_AS_NUMBER_MESSAGE);
-
         return Integer.parseInt(value);
     }
 }

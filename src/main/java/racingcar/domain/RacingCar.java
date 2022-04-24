@@ -19,4 +19,21 @@ public class RacingCar {
         int range = Randoms.pickNumberInRange(0, 9);
         if (range >= GO_AHEAD_NUMBER) this.step++;
     }
+
+    public int isWinStep(int winStep) {
+        return Math.max(winStep, step);
+    }
+
+    public void addWinRacingCar(int winStep, Winners winners) {
+        if (winStep == step) winners.addRacingCar(this.getName());
+    }
+
+    public void printState() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(this.getName()).append(" : ");
+        for (int i = 0; i < step; i++) {
+            builder.append("-");
+        }
+        System.out.println(builder);
+    }
 }

@@ -11,12 +11,8 @@ public class Output {
     public static void printInputCartNameMessage() {
         System.out.println(INPUT_CAR_NAME_MESSAGE);
     }
-
     public static void printInputRacingCountMessage() {
         System.out.println(INPUT_RACING_COUNT_MESSAGE);
     }
-
-    public static void printErrorMessage(String error) {
-        System.out.println(ERROR_prefix + error);
-    }
+    public static void printErrorMessage(String error) { System.out.println(ERROR_prefix + error); }
 }
